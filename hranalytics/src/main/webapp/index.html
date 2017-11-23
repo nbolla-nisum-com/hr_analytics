@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html>
+<head>
+<head>
+
+<title>HR ANALYTICS</title>
+
+
+<!-- <link rel="stylesheet" href="https://material.angularjs.org/1.1.5/docs.css"> -->
+<link rel="stylesheet" href="lib/css/bootstrap.min.css">
+<link rel="stylesheet" href="lib/css/angular-material.css">
+<link rel="stylesheet" href="static/css/main.css">
+
+<script src="lib/js/angular.min.js"></script>
+<script src="lib/js/angular-animate.min.js"></script>
+<script src="lib/js/angular-route.min.js"></script>
+<script src="lib/js/angular-messages.min.js"></script>
+<script src="lib/js/angular-aria.min.js"></script>
+<script src="lib/js/angular-material.min.js"></script>
+<script src="lib/js/jquery.min.js"></script>
+<script src="lib/js/bootstrap.min.js"></script>
+<script src="js/home.js"></script>
+
+
+
+</head>
+<body>
+
+	<!-- <div class="login">
+	<div ng-app="createUser" ng-controller="createUserCntrl" class="login-screen"> -->
+
+	<div style="width: 800px; margin: -10px auto;">
+
+		<h2>Employee Attrition Prediction</h2>
+	</div>
+	<div ng-app="myApp" ng-controller="homeCtrl" class="login">
+		<div class="login-screen" style="width: 800px; margin: 0 auto;">
+			<div class="container">
+				<div class="row row_bottom_margin" align="left">
+					<div class="col-md-4">
+						<label type="text" class="lbl" for="EmployeeNumber">EmployeeNumber
+							:</label> <input ng-model="data.EmployeeNumber" id="employeeNumber" />
+
+					</div>
+					<div class="col-md-4">
+
+						<label type="text" class="lbl" for="Department">Department
+							:</label><select ng-model="data.Department" id="department"
+							ng-options="department for department in departments"></select>
+							
+					</div>
+
+				</div>
+				<div class="row row_bottom_margin" align="left">
+					<div class="col-md-4">
+						<label type="text" class="lbl" for="Education">Education :</label>
+						<input ng-model="data.Education" id="Education" />
+
+					</div>
+					<div class="col-md-4 row_bottom_margin">
+						<label type="text" class="lbl" for="EducationField">EducationField
+							:</label> <select ng-model="data.EducationField" id="educationField"
+							ng-options="fields for fields in educationFields"></select>
+					</div>
+
+				</div>
+				<div class="row row_bottom_margin" align="left">
+					<div class="col-md-4">
+						<label type="text" class="lbl" for="Age">Age :</label> <input
+							ng-model="data.Age" id="age" />
+
+					</div>
+					<div class="col-md-4">
+						<label type="text" class="lbl" for="Department">Gender :</label> <input
+							ng-model="data.Gender" id="gender" />
+					</div>
+
+				</div>
+				<div class="row row_bottom_margin" align="left">
+					<div class="col-md-4">
+						<label type="text" class="lbl" for="MaritalStatus">MaritalStatus
+							:</label> <select ng-model="data.MaritalStatus" id="maritalStatus"
+							ng-options="maritalStatus for maritalStatus in maritalStatuses"></select>
+
+					</div>
+					<div class="col-md-4">
+						<label type="text" class="lbl" for="DistanceFromHome">DistanceFromHome
+							:</label> <input ng-model="data.DistanceFromHome" id="distanceFromHome" />
+					</div>
+
+				</div>
+				<div class="row row_bottom_margin" align="left">
+					<div class="col-md-4">
+						<label type="text" class="lbl" for="JobInvolvement">JobInvolvement
+							:</label> <input ng-model="data.JobInvolvement" id="jobInvolvement" />
+
+					</div>
+					<div class="col-md-4">
+						<label type="text" class="lbl" for="JobLevel">JobLevel :</label> <input
+							ng-model="data.JobLevel" id="jobLevel" />
+					</div>
+
+				</div>
+				<div class="row row_bottom_margin" align="left">
+					<div class="col-md-4">
+						<label type="text" class="lbl" for="JobRole">JobRole :</label> <select
+							ng-model="data.JobRole" id="jobRole"
+							ng-options="role for role in jobRoles"></select>
+					</div>
+					<div class="col-md-4">
+						<label type="text" class="lbl" for="JobSatisfaction">JobSatisfaction
+							:</label> <input ng-model="data.JobSatisfaction" id="jobSatisfaction" />
+					</div>
+
+				</div>
+				<div class="row row_bottom_margin" align="left">
+					<div class="col-md-4">
+						<label type="text" class="lbl" for="DailyRate">DailyRate :</label>
+						<input ng-model="data.DailyRate" id="dailyRate" />
+
+					</div>
+					<div class="col-md-4">
+						<label type="text" class="lbl" for="HourlyRate">HourlyRate
+							:</label> <input ng-model="data.HourlyRate" id="hourlyRate" />
+					</div>
+
+				</div>
+				<div class="row row_bottom_margin" align="left">
+					<div class="col-md-4">
+						<label type="text" class="lbl" for="MonthlyIncome">MonthlyIncome
+							:</label> <input ng-model="data.MonthlyIncome" id="monthlyIncome" />
+
+					</div>
+					<div class="col-md-4">
+						<label type="text" class="lbl" for="MonthlyRate">MonthlyRate
+							:</label> <input ng-model="data.MonthlyRate" id="monthlyRate" />
+					</div>
+
+				</div>
+				<div class="row row_bottom_margin" align="left">
+					<div class="col-md-4">
+						<label type="text" class="lbl" for="PercentSalaryHike">PercentSalaryHike
+							:</label> <input ng-model="data.PercentSalaryHike" id="percentSalaryHike" />
+
+					</div>
+					<div class="col-md-4">
+						<label type="text" class="lbl" for="PerformanceRating">PerformanceRating
+							:</label> <input ng-model="data.PerformanceRating" id="performanceRating" />
+					</div>
+
+				</div>
+
+				<div class="row row_bottom_margin" align="left">
+					<div class="col-md-4">
+						<label type="text" class="lbl" for="TotalWorkingYears">TotalWorkingYears
+							:</label> <input ng-model="data.TotalWorkingYears" id="totalWorkingYears" />
+
+					</div>
+					<div class="col-md-4">
+						<label type="text" class="lbl" for="NumCompaniesWorked">NumCompaniesWorked
+							:</label> <input ng-model="data.NumCompaniesWorked" id="numCompaniesWorked" />
+					</div>
+
+				</div>
+				<div class="row row_bottom_margin" align="left">
+					<div class="col-md-4">
+						<label type="text" class="lbl" for="YearsAtCompany">YearsAtCompany
+							:</label> <input ng-model="data.YearsAtCompany" id="yearsAtCompany" />
+
+					</div>
+					<div class="col-md-4">
+						<label type="text" class="lbl" for="YearsInCurrentRole">YearsInCurrentRole
+							:</label> <input ng-model="data.YearsInCurrentRole" id="yearsInCurrentRole" />
+					</div>
+
+				</div>
+				<div class="row row_bottom_margin" align="left">
+					<div class="col-md-4">
+						<label type="text" class="lbl" for="YearsSinceLastPromotion">YearsSinceLastPromotion
+							:</label> <input ng-model="data.YearsSinceLastPromotion"
+							id="yearsSinceLastPromotion" />
+
+					</div>
+					<div class="col-md-4">
+						<label type="text" class="lbl" for="YearsWithCurrManager">YearsWithCurrManager
+							:</label> <input ng-model="data.YearsWithCurrManager"
+							id="yearsWithCurrManager" />
+					</div>
+
+				</div>
+				<div class="row row_bottom_margin" align="left">
+					<div class="col-md-4">
+						<label type="text" class="lbl" for="RelationshipSatisfaction">RelationshipSatisfaction
+							:</label> <input ng-model="data.RelationshipSatisfaction"
+							id="relationshipSatisfaction" />
+
+					</div>
+					<div class="col-md-4">
+						<label type="text" class="lbl" for="EnvironmentSatisfaction">EnvironmentSatisfaction
+							:</label> <input ng-model="data.EnvironmentSatisfaction"
+							id="environmentSatisfaction" />
+					</div>
+
+				</div>
+
+				<div class="row row_bottom_margin" align="left">
+					<div class="col-md-4">
+						<label type="text" class="lbl" for="OverTime">OverTime :</label> <input
+							ng-model="data.OverTime" id="overTime" />
+
+					</div>
+					<div class="col-md-4">
+						<label type="text" class="lbl" for="StandardHours">StandardHours
+							:</label> <input ng-model="data.StandardHours" id="standardHours" />
+					</div>
+
+				</div>
+				<div class="row row_bottom_margin" align="left">
+					<div class="col-md-4">
+						<label type="text" class="lbl" for="Over18">Over18 :</label> <input
+							ng-model="data.Over18" id="over18" />
+
+					</div>
+					<div class="col-md-4">
+						<label type="text" class="lbl" for="BusinessTravel">BusinessTravel
+							:</label> <select ng-model="data.BusinessTravel" id="businessTravel"
+							ng-options="travel for travel in businessTravels"></select>
+					</div>
+
+				</div>
+				<div class="row row_bottom_margin" align="left">
+					<div class="col-md-4">
+						<label type="text" class="lbl" for="TrainingTimesLastYear">TrainingTimesLastYear
+							:</label> <input ng-model="data.TrainingTimesLastYear"
+							id="trainingTimesLastYear" />
+
+					</div>
+					<div class="col-md-4">
+						<label type="text" class="lbl" for="WorkLifeBalance">WorkLifeBalance
+							:</label> <input ng-model="data.WorkLifeBalance" id="workLifeBalance" />
+					</div>
+
+				</div>
+
+				<div class="row row_bottom_margin" align="left">
+					<div class="col-md-4">
+						<label type="text" class="lbl" for="EmployeeCount">EmployeeCount
+							:</label> <input ng-model="data.EmployeeCount" id="employeeCount" />
+
+					</div>
+					<div class="col-md-4">
+						<label type="text" class="lbl" for="StockOptionLevel">StockOptionLevel
+							:</label> <input ng-model="data.StockOptionLevel" id="stockOptionLevel" />
+					</div>
+
+				</div>
+				
+				<div class="row row_bottom_margin" >
+					<div class="col-md-8" align="center">
+						
+						<input type="text" class="button" ng-click="predict($event)" id="employeeCount" value="PREDICT ME"/>
+						
+					</div>
+					
+				</div>
+
+			</div>
+
+		</div>
+		<div style="height=10px" ></div>
+
+	</div>
+
+</body>
+</html>
