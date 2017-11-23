@@ -1483,7 +1483,7 @@ md-calendar {
   overflow: hidden;
   height: 308px; }
   .md-calendar-scroll-mask .md-virtual-repeat-scroller {
-    
+    overflow-y: scroll;
     -webkit-overflow-scrolling: touch; }
     .md-calendar-scroll-mask .md-virtual-repeat-scroller::-webkit-scrollbar {
       display: none; }

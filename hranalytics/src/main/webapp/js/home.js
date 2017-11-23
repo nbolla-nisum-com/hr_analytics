@@ -12,18 +12,19 @@ app.controller('homeCtrl', function($scope,$mdDialog) {
 	 
 	 $scope.predict = function(event){
 		
-		 
+		//Write a function to send data to AWS, based on the result we will show the pop up 
 	    $mdDialog.show(
 	      $mdDialog.alert()
 	        .parent(angular.element(document.querySelector('#popupContainer')))
 	        .clickOutsideToClose(true)
-	        .title('This is an alert title')
-	        .textContent('Thhasdfdas ')
-	        .ariaLabel('sadfasfa')
+	        .textContent('signs it\'s near to quit  😐')
 	        .ok('Got it!')
 	        .targetEvent(event)
 	    );
 			    
+	    
+	   //We should clear data 
+	    $scope.data = {};
 			    
 	 };
 	
